@@ -12,8 +12,8 @@
           >
             <div class="flex space-x-4 items-center">
               <!-- logo -->
-              <img class="h-10 min-w-10" src="../assets/logo.png" alt="logo" />
-              <p>Vue 3 Dapp</p>
+              <img class="h-10 min-w-10" src="../assets/GreedyAvatar.png" alt="logo" />
+              <p>Greedy Bots Client</p>
             </div>
           </router-link>
           <div class="flex items-center space-x-10">
