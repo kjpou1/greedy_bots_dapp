@@ -12,14 +12,14 @@ const { provider, userAddress } = useWalletStore();
 // Most recent data read is saved as state
 const lastBlockNumber = ref<number>(0);
 const lastBlockTimestamp = ref<number>(0);
-const ethBalance = ref<bigint>();
+const ethBalance = ref<number>();
 
 // Reset state when, e.g.user switches wallets. Provider/signer are automatically updated by ethers so are not cleared
 function resetState() {
   // Save off data
   lastBlockNumber.value = 0;
   lastBlockTimestamp.value = 0;
-  ethBalance.value = 0n;
+  ethBalance.value = 0;
 }
 
 export default function useDataStore() {
@@ -45,7 +45,7 @@ export default function useDataStore() {
       // Save off data
       lastBlockNumber.value = (blockNumber as BigNumber).toNumber();
       lastBlockTimestamp.value = (timestamp as BigNumber).toNumber();
-      ethBalance.value = (balance as BigNumber).toBigInt();
+      ethBalance.value = (balance as BigNumber).toNumber();
     } catch {
       resetState();
     }
